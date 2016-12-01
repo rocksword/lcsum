@@ -24,7 +24,7 @@ public class ReceiveSummary {
     private static final String LC_OLD = "D:\\ayun\\regi\\lc-old.xlsx";
     private static final String LC_1610 = "D:\\ayun\\regi\\lc-1610.xlsx";
 
-    private static final String LC_RECEIVE = "D:\\lc_home\\output\\pj\\lc-receive.txt";
+    private static final String LC_RECEIVE = "D:\\ayun\\regi\\lc-receive.txt";
     private static final SimpleDateFormat DATE_SF = new SimpleDateFormat("yyyy-MM-dd");
     private static Map<String, Double> dateValMap = new HashMap<>();
 
