@@ -1,9 +1,7 @@
 package com.an.tool.lcs;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,10 +19,11 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReceiveSummary {
-    private static final String LC_OLD = "D:\\ayun\\regi\\lc-old.xlsx";
-    private static final String LC_1610 = "D:\\ayun\\regi\\lc-1610.xlsx";
+    private static final String LC_DIR = "D:\\ayun\\regi\\";
+    private static final String LC_OLD = LC_DIR + "lc-old.xlsx";
+    private static final String LC_1610 = LC_DIR + "lc-1610.xlsx";
+    private static final String LC_RECEIVE = LC_DIR + "lc-receive.txt";
 
-    private static final String LC_RECEIVE = "D:\\ayun\\regi\\lc-receive.txt";
     private static final SimpleDateFormat DATE_SF = new SimpleDateFormat("yyyy-MM-dd");
     private static Map<String, Double> dateValMap = new HashMap<>();
 
@@ -48,7 +47,7 @@ public class ReceiveSummary {
         }
         txt.append("\n");
         txt.append("TOTAL ").append("\t").append(total).append("\n");
-        writeFile(LC_RECEIVE, txt.toString(), 1, true);
+        LcUtil.writeFile(LC_RECEIVE, txt.toString(), 1, true);
     }
 
     private static Set<String> INVALID_DATE_SET = new HashSet<>();
@@ -153,38 +152,5 @@ public class ReceiveSummary {
             System.out.println();
         }
         fis.close();
-    }
-
-    private static void writeFile(String filePath, String content, int writeType, boolean createEmptyFile)
-            throws IOException {
-        if (filePath == null || filePath.isEmpty()) {
-            throw new IllegalArgumentException("Invalid filePath " + filePath);
-        }
-        if (content == null || content.isEmpty()) {
-            if (!createEmptyFile) {
-                return;
-            }
-        }
-        String dirName = filePath.substring(0, filePath.lastIndexOf(File.separator));
-        File dir = new File(dirName);
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-        File file = new File(filePath);
-        if (file.exists()) {
-            if (writeType == 0) {
-                return;
-            } else if (writeType == 1) {
-                file.delete();
-                file.createNewFile();
-            }
-        } else {
-            file.createNewFile();
-        }
-        if (!content.isEmpty()) {
-            try (BufferedWriter bf = new BufferedWriter(new FileWriter(filePath, writeType == 2))) {
-                bf.write(content);
-            }
-        }
     }
 }

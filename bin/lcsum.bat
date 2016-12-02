@@ -1,3 +1,3 @@
 D:
 cd D:\bin
-java -classpath lcsum-libs\commons-codec-1.10.jar;lcsum-libs\commons-collections4-4.1.jar;lcsum-libs\commons-logging-1.2.jar;lcsum-libs\curvesapi-1.04.jar;lcsum-libs\junit-4.12.jar;lcsum-libs\log4j-1.2.17.jar;lcsum-libs\poi-3.15.jar;lcsum-libs\poi-excelant-3.15.jar;lcsum-libs\poi-ooxml-3.15.jar;lcsum-libs\poi-ooxml-schemas-3.15.jar;lcsum-libs\poi-scratchpad-3.15.jar;lcsum-libs\xmlbeans-2.6.0.jar;lcsum-0.0.1.jar com.an.tool.lcs.ReceiveSummary
+java -classpath lcsum-libs\commons-codec-1.10.jar;lcsum-libs\commons-collections4-4.1.jar;lcsum-libs\commons-logging-1.2.jar;lcsum-libs\curvesapi-1.04.jar;lcsum-libs\junit-4.12.jar;lcsum-libs\log4j-1.2.17.jar;lcsum-libs\poi-3.15.jar;lcsum-libs\poi-excelant-3.15.jar;lcsum-libs\poi-ooxml-3.15.jar;lcsum-libs\poi-ooxml-schemas-3.15.jar;lcsum-libs\poi-scratchpad-3.15.jar;lcsum-libs\xmlbeans-2.6.0.jar;lcsum-0.0.1.jar com.an.tool.lcs.LcSum
